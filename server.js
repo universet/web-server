@@ -1,17 +1,8 @@
 var express = require('express');
 var app = express();
 var PORT = 3000; //In js when var is in all caps -> its value shold not change throught the program
-var middleware = {
-	requireAuthentication: function (req, res, next) {
-		console.log('Private route hit');
-		next();
-	},
-	logger: function(req, res, next) {
-		var date = new Date().toString();
-		console.log('Request: ' + req.method + ' ' + date +' ' + req.originalUrl);
-		next();
-	}
-};
+
+var middleware = require('./middleware.js');
 
 app.use(middleware.logger);
 //app.use(middleware.requireAuthentication); //Here we are adding middleware to an app

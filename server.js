@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = 3000; //In js when var is in all caps -> its value shold not change throught the program
+var PORT = process.env.PORT || 3000; //In js when var is in all caps -> its value shold not change throught the program
 
 var middleware = require('./middleware.js');
 
